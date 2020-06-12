@@ -134,7 +134,7 @@
     duration: "1200%"
   })
     .setPin("#pinContainer")
-    .addIndicators()
+    //.addIndicators()
     .setTween(horizontalSlide)
     .addTo(controller);
 
