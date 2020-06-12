@@ -1609,11 +1609,16 @@ a.btn--disabled {
 }
 
 /* line 68, src/sass/components/_media.scss */
+.media__video--hide:after {
+  display: none;
+}
+
+/* line 74, src/sass/components/_media.scss */
 .media__img {
   border-radius: 8px 8px 0 0;
 }
 
-/* line 72, src/sass/components/_media.scss */
+/* line 78, src/sass/components/_media.scss */
 .media__item-title {
   margin-bottom: 0.75rem;
   font-size: 1.125rem;
@@ -1623,7 +1628,7 @@ a.btn--disabled {
   padding-right: 1rem;
 }
 
-/* line 81, src/sass/components/_media.scss */
+/* line 87, src/sass/components/_media.scss */
 .media__tag {
   color: rgba(0, 0, 0, 0.5);
   padding-left: 1rem;
@@ -2026,8 +2031,8 @@ body {
   }
   /* line 9, src/sass/components/_animation.scss */
   .animation__container {
-    width: 200%;
-    /* to contain 2 panels, each with 100% of window width */
+    width: 1200%;
+    /* to contain 12 panels, each with 100% of window width */
     height: calc(100vh - 115px);
     display: -webkit-box;
     display: -ms-flexbox;
@@ -2036,7 +2041,7 @@ body {
   /* line 22, src/sass/components/_animation.scss */
   .animation__item {
     height: 100%;
-    width: 50%;
+    width: 10%;
     /* relative to parent -> 50% of 200% = 100% of window width */
   }
 }

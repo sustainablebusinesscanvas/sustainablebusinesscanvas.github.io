@@ -4,13 +4,13 @@
   if (window.matchMedia("(max-width: 767px)").matches) return;
 
 // ================= helper.js
-  const add = function(_num1, _num2) {
+  const add = function (_num1, _num2) {
     var solution = _num1 + _num2;
     return solution;
   };
 
 // returns the width and height of the window
-  const getWDs = function() {
+  const getWDs = function () {
     return {
       h: window.innerHeight || document.documentElement.clientHeight,
       w: window.innerWidth || document.documentElement.clientWidth
@@ -18,38 +18,38 @@
   };
 
 // returns if a big section is in focus of the window or not -- dependent on getWDs function
-  const inFocus = function(el) {
+  const inFocus = function (el) {
     let rect = el.getBoundingClientRect();
     let turnPointY = getWDs().h / 2;
     let turnPointX = getWDs().w / 2;
     let elInFocus = false;
     let inY = (rect.top <= turnPointY && rect.top >= 0) || (rect.bottom <= getWDs().h && rect.bottom >= turnPointY) || (rect.top <= 0 && rect.bottom >= turnPointY);
-    let inX =  ((rect.left < turnPointX && rect.left >= 0) || (rect.right < getWDs().w && rect.right > turnPointX));
+    let inX = ((rect.left < turnPointX && rect.left >= 0) || (rect.right < getWDs().w && rect.right > turnPointX));
 
-    if (inX && inY){
+    if (inX && inY) {
       elInFocus = true;
     }
 
     return elInFocus;
   };
 
-  const scrollWindow = function(_target, _label, _speed) {
+  const scrollWindow = function (_target, _label, _speed) {
     let scene = eval(_target.dataset.scene);
     let timeline = eval(_target.dataset.timeline);
     let timelineDuration = timeline.duration();
-    let tlLabel = 'timeline.labels.'+ _label;
+    let tlLabel = 'timeline.labels.' + _label;
     let labelTime = eval(tlLabel);
     let nMTime = 0;
     if (timelineDuration != labelTime && labelTime != undefined) {
       nMTime = labelTime / getRatio(scene.duration(), timeline.duration());
     } else {
-      nMTime =  timeline.duration() / getRatio(scene.duration(), timeline.duration())
+      nMTime = timeline.duration() / getRatio(scene.duration(), timeline.duration())
     }
     let scrollLoc = scene.scrollOffset() + nMTime;
-    gsap.to(window, _speed, { scrollTo: { y: scrollLoc } });
+    gsap.to(window, _speed, {scrollTo: {y: scrollLoc}});
   };
 
-  const  getRatio = function(_num1, _num2) {
+  const getRatio = function (_num1, _num2) {
     var theRatio = 1;
     if (_num1 > _num2) {
       theRatio = _num2 / _num1;
@@ -61,7 +61,7 @@
 
 // ================= animation.js
 
-  let sectionCount = 2;
+  let sectionCount = 12;
   let shiftWidth = "-=" + 100 / sectionCount + "%";
 
   const controller = new ScrollMagic.Controller();
@@ -70,21 +70,71 @@
     .timeline()
     .addLabel("scene_00")
     .to("#sections-container", 0.5, {z: -150, rotation: 0.01})
-    .to("#sections-container", { x: shiftWidth,} )
+    .to("#sections-container", {x: shiftWidth,})
     .to("#sections-container", 0.5, {z: 0, rotation: 0.01})
-  // ======= scene 10
-  //.addLabel("scene_10")
-  //.to("#sections-container", { x: shiftWidth})
-  // ======= scene 20
-  //.addLabel("scene_20")
-  // .to("#sections-container", 1, { x: shiftWidth })
+    // ======= scene 10
+    .addLabel("scene_10")
+    .to("#sections-container", 0.5, {z: -150, rotation: 0.01})
+    .to("#sections-container", {x: shiftWidth,})
+    .to("#sections-container", 0.5, {z: 0, rotation: 0.01})
+    // ======= scene 11
+    .addLabel("scene_11")
+    .to("#sections-container", 0.5, {z: -150, rotation: 0.01})
+    .to("#sections-container", {x: shiftWidth,})
+    .to("#sections-container", 0.5, {z: 0, rotation: 0.01})
+    // ======= scene 12
+    .addLabel("scene_12")
+    .to("#sections-container", 0.5, {z: -150, rotation: 0.01})
+    .to("#sections-container", {x: shiftWidth,})
+    .to("#sections-container", 0.5, {z: 0, rotation: 0.01})
+    // ======= scene 13
+    .addLabel("scene_13")
+    .to("#sections-container", 0.5, {z: -150, rotation: 0.01})
+    .to("#sections-container", {x: shiftWidth,})
+    .to("#sections-container", 0.5, {z: 0, rotation: 0.01})
+    // ======= scene 14
+    .addLabel("scene_14")
+    .to("#sections-container", 0.5, {z: -150, rotation: 0.01})
+    .to("#sections-container", {x: shiftWidth,})
+    .to("#sections-container", 0.5, {z: 0, rotation: 0.01})
+    // ======= scene 15
+    .addLabel("scene_15")
+    .to("#sections-container", 0.5, {z: -150, rotation: 0.01})
+    .to("#sections-container", {x: shiftWidth,})
+    .to("#sections-container", 0.5, {z: 0, rotation: 0.01})
+    // ======= scene 16
+    .addLabel("scene_16")
+    .to("#sections-container", 0.5, {z: -150, rotation: 0.01})
+    .to("#sections-container", {x: shiftWidth,})
+    .to("#sections-container", 0.5, {z: 0, rotation: 0.01})
+    // ======= scene 17
+    .addLabel("scene_17")
+    .to("#sections-container", 0.5, {z: -150, rotation: 0.01})
+    .to("#sections-container", {x: shiftWidth,})
+    .to("#sections-container", 0.5, {z: 0, rotation: 0.01})
+    // ======= scene 18
+    .addLabel("scene_18")
+    .to("#sections-container", 0.5, {z: -150, rotation: 0.01})
+    .to("#sections-container", {x: shiftWidth,})
+    .to("#sections-container", 0.5, {z: 0, rotation: 0.01})
+    // ======= scene 19
+    .addLabel("scene_19")
+    .to("#sections-container", 0.5, {z: -150, rotation: 0.01})
+    .to("#sections-container", {x: shiftWidth,})
+    .to("#sections-container", 0.5, {z: 0, rotation: 0.01})
+    // ======= scene 20
+    // .addLabel("scene_20")
+    // .to("#sections-container", 0.5, {z: -150, rotation: 0.01})
+    // .to("#sections-container", {x: shiftWidth,})
+    // .to("#sections-container", 0.5, {z: 0, rotation: 0.01});
 // ----------- create scene to pin and link animation
   const sideScroll = new ScrollMagic.Scene({
     triggerElement: "#pinContainer",
     triggerHook: "onLeave",
-    duration: "200%"
+    duration: "1200%"
   })
     .setPin("#pinContainer")
+    .addIndicators()
     .setTween(horizontalSlide)
     .addTo(controller);
 
@@ -96,7 +146,7 @@
 //     { text: "Section 3", link: "#sec_30", label: "scene_30"},
 //   ];
 
-  const onNavClick = function(event) {
+  const onNavClick = function (event) {
     event.preventDefault();
     let $clickedAnchor = event.currentTarget;
     scrollWindow($clickedAnchor, $clickedAnchor.dataset.label, 1.5);
@@ -123,33 +173,32 @@
     });
   };*/
 //buildNav();
-  let anchors  = document.querySelectorAll(".menu__link");
+  let anchors = document.querySelectorAll(".menu__link");
 
   anchors.forEach((function (link) {
     link.addEventListener('click', onNavClick);
   }));
 
   function resetNavHit(_currentNavAnchor) {
-    anchors.forEach((function(value) {
+    anchors.forEach((function (value) {
       value.classList.remove("menu__link--active");
     }));
     _currentNavAnchor.classList.add("menu__link--active");
   }
 
   let sections = document.querySelectorAll(".slider__item");
-  const setSelectedSection = function() {
-    sections.forEach((function(value, index) {
+  const setSelectedSection = function () {
+    sections.forEach((function (value, index) {
       if (inFocus(value)) {
         resetNavHit(anchors[index]);
       }
     }));
   };
 
-  document.addEventListener("scroll", (function() {
+  document.addEventListener("scroll", (function () {
     setSelectedSection();
   }));
   setSelectedSection();
-
 
 
 }());
@@ -263,9 +312,10 @@ function setupVideo(video) {
 	let button = video.querySelector('.video__button');
 	let id = parseMediaURL(media);
 
-	video.addEventListener('click', () => {
+	video.addEventListener('click', (e) => {
 		let iframe = createIframe(id);
-
+		//hide overlay
+    e.target.closest('.video').classList.add('media__video--hide');
 		link.remove();
 		button.remove();
 		video.appendChild(iframe);
