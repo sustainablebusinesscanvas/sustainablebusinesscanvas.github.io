@@ -1,34 +1,4 @@
 /*! project-name v0.0.1 | (c) 2021 YOUR NAME | MIT License | http://link-to-your-git-repo.com */
-(function() {
-    const goals = document.querySelectorAll('.canvas__item');
-    const canvas = document.querySelector('.canvas__desktop');
-    const canvasImage = document.querySelector('.canvas__image');
-
-    function goalHandle (e, item) {
-        e.preventDefault();
-        e.stopPropagation();
-        canvasImage.classList.remove('canvas__item--active');
-        goals.forEach(goal => goal.classList.remove('canvas__item--active'));
-        item.classList.add('canvas__item--active');
-    }
-
-    goals.forEach(item => item.addEventListener('click', (function(e) {
-        goalHandle(e, this);
-    })));
-
-    canvasImage.addEventListener('click', (function(e) {
-        goalHandle(e, this);
-    }));
-
-    window.addEventListener('click', (function (e) {
-        if (e.target !== canvas) {
-            goals.forEach(goal => goal.classList.remove('canvas__item--active'));
-            canvasImage.classList.remove('canvas__item--active');
-        }
-    }));
-}());
-
-
 (function(){
 
     // Добавление/удаление модификаторов при клике на переключение видимости
@@ -121,96 +91,56 @@
 
 }());
 
-(function () {
-    const modal = document.getElementById("canvas-modal");
+function findVideos() {
+	let videos = document.querySelectorAll('.video');
 
-    if(!modal) return;
+	for (let i = 0; i < videos.length; i++) {
+		setupVideo(videos[i]);
+	}
+}
 
-    const btn = document.querySelector('.canvas__mobile');
+function setupVideo(video) {
+	let link = video.querySelector('.video__link');
+	let media = video.querySelector('.video__media');
+	let button = video.querySelector('.video__button');
+	let id = parseMediaURL(media);
 
-    const close = modal.querySelector('.modal__btn');
+	video.addEventListener('click', (e) => {
+		let iframe = createIframe(id);
+		//hide overlay
+    e.target.closest('.video').classList.add('media__video--hide');
+		link.remove();
+		button.remove();
+		video.appendChild(iframe);
+	});
 
-    function stopScrolling() {
-        document.body.style.overflow = "hidden";
-        document.body.style.height = "100%";
-    }
+	link.removeAttribute('href');
+	video.classList.add('video--enabled');
+}
 
-    function resumeScrolling() {
-        document.body.style.overflow = "auto";
-        document.body.style.height = "auto";
-    }
+function parseMediaURL(media) {
+	let regexp = /https:\/\/i\.ytimg\.com\/vi\/([a-zA-Z0-9_-]+)\/maxresdefault\.jpg/i;
+	let url = media.src;
+	let match = url.match(regexp);
 
-    function sliderInit() {
-        const swiperModal = new Swiper('.swiper-modal', {
-            slidesPerView: 'auto',
-            navigation: {
-                nextEl: '.swiper-button-next--modal',
-                prevEl: '.swiper-button-prev--modal',
-            },
-            runCallbacksOnInit: true,
-            on: {
-                init: function (sw) {
-                    let number = document.querySelector('.modal__numbers');
-                    number.textContent = (sw.activeIndex + 1) + '/' + sw.slides.length;
-                },
-                slideChange: function (sw) {
-                    let number = document.querySelector('.modal__numbers');
-                    number.textContent = (sw.activeIndex + 1) + '/' + sw.slides.length;
-                }
-            },
+	return match[1];
+}
 
-        });
-    }
+function createIframe(id) {
+	let iframe = document.createElement('iframe');
 
+	iframe.setAttribute('allowfullscreen', '');
+	iframe.setAttribute('allow', 'autoplay');
+	iframe.setAttribute('src', generateURL(id));
+	iframe.classList.add('video__media');
 
-    btn.addEventListener('click', (function (e) {
-        e.preventDefault();
-        modal.classList.add('modal__show');
-        stopScrolling();
-        sliderInit();
+	return iframe;
+}
 
-    }));
+function generateURL(id) {
+	let query = '?rel=0&showinfo=0&autoplay=1';
 
-    close.addEventListener('click', (function (e) {
-        e.preventDefault();
-        modal.classList.remove('modal__show');
-        resumeScrolling();
-    }));
+	return 'https://www.youtube.com/embed/' + id + query;
+}
 
-    window.addEventListener('click', (function (e) {
-        if (e.target === modal) {
-            modal.classList.remove('modal__show');
-            resumeScrolling();
-        }
-    }));
-
-
-}());
-
-(function () {
-const swiperSlider = new Swiper('.swiper-slider', {
-    navigation: {
-        nextEl: '.swiper-button-next--slider',
-        prevEl: '.swiper-button-prev--slider',
-    },
-    pagination: {
-        el: '.swiper-pagination--slider',
-        clickable: true
-    },
-});
-
-const swiperCases = new Swiper('.swiper-cases', {
-    // autoHeight: true,
-    slidesPerView: 'auto',
-    spaceBetween: 30,
-    navigation: {
-        nextEl: '.swiper-button-next--cases',
-        prevEl: '.swiper-button-prev--cases',
-    },
-    pagination: {
-        el: '.swiper-pagination--cases',
-        clickable: true
-    },
-});
-}());
-
+findVideos();
