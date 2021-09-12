@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9629d907-4015-4e7e-9862-421fe1371322" name="Default Changelist" comment="" />
+    <list default="true" id="9629d907-4015-4e7e-9862-421fe1371322" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/case.html" beforeDir="false" afterPath="$PROJECT_DIR$/case.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cases.html" beforeDir="false" afterPath="$PROJECT_DIR$/cases.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/case.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/case.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/case.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/case.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/cases.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/cases.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/cases.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/cases.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/main.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/main.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -44,6 +55,8 @@
       <workItem from="1630223810123" duration="16000" />
       <workItem from="1630223832274" duration="7000" />
       <workItem from="1630223855181" duration="175000" />
+      <workItem from="1631252740873" duration="569000" />
+      <workItem from="1631462217163" duration="668000" />
     </task>
     <servers />
   </component>
