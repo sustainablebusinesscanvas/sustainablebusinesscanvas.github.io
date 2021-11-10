@@ -1016,6 +1016,11 @@ a.btn--disabled {
   margin-left: 2.375rem;
 }
 
+/* line 72, src/sass/_page-header.scss */
+.page-header__menu .main-nav__link--btn:hover:after {
+  display: none;
+}
+
 /* line 1, src/sass/_page-footer.scss */
 .page-footer {
   background-color: #023A15;
@@ -1080,6 +1085,16 @@ a.btn--disabled {
   margin-bottom: 0.75rem;
 }
 
+/* line 24, src/sass/_divider.scss */
+.divider--modal {
+  background-color: #E6E6E6;
+  margin-top: clamp(1.375rem, 0.625rem + 2.08333vw, 2.5rem);
+  width: 100%;
+  max-width: 41.25rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /* line 1, src/sass/_burger.scss */
 .burger {
   position: relative;
@@ -1103,7 +1118,7 @@ a.btn--disabled {
 .burger > span {
   display: inline-block;
   width: 100%;
-  height: 2px;
+  height: 1px;
   background: #182B33;
   position: relative;
   -webkit-transition: background 0.3s 0.3s;
@@ -1116,7 +1131,7 @@ a.btn--disabled {
   position: absolute;
   left: 0;
   width: 100%;
-  height: 2px;
+  height: 1px;
   background: #182B33;
   -webkit-transform-origin: 50% 50%;
           transform-origin: 50% 50%;
@@ -1448,6 +1463,706 @@ a.btn--disabled {
   margin-left: 0.8em;
   color: #6B6B6B;
 }
+
+/* line 1, src/sass/_field-actions.scss */
+.field-actions {
+  display: grid;
+  justify-items: center;
+}
+
+/* line 5, src/sass/_field-actions.scss */
+.field-actions .btn {
+  margin-top: clamp(0.75rem, 0.58333rem + 0.46296vw, 1rem);
+}
+
+/* line 2, src/sass/_field-checkbox.scss */
+.field-checkbox {
+  display: block;
+}
+
+/* line 9, src/sass/_field-checkbox.scss */
+.field-checkbox__title {
+  display: block;
+  margin-bottom: 0.4em;
+  line-height: 1.5;
+  font-weight: 700;
+}
+
+/* line 15, src/sass/_field-checkbox.scss */
+.field-checkbox__input-wrap + .field-checkbox__input-wrap {
+  margin-top: 2rem;
+}
+
+/* line 21, src/sass/_field-checkbox.scss */
+.field-checkbox__input-wrap--error .field-checkbox__name-text,
+.field-checkbox__input-wrap--error .field-checkbox__help-text {
+  color: #FD6F63;
+}
+
+/* line 28, src/sass/_field-checkbox.scss */
+.field-checkbox__name {
+  display: inline-block;
+  position: relative;
+  padding-left: 2rem;
+  margin-right: 0.6em;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+/* line 37, src/sass/_field-checkbox.scss */
+.field-checkbox__name-text {
+  display: inline-block;
+  font-size: 0.75rem;
+  line-height: 1.25;
+  color: #182B33;
+}
+
+/* line 63, src/sass/_field-checkbox.scss */
+input:disabled ~ .field-checkbox__name-text {
+  cursor: not-allowed;
+}
+
+/* line 67, src/sass/_field-checkbox.scss */
+.field-checkbox__name-text:before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  left: 0;
+  width: 1.25rem;
+  height: 1.25rem;
+  background-color: #609073;
+  border-radius: 3px;
+}
+
+/* line 79, src/sass/_field-checkbox.scss */
+input:focus ~ .field-checkbox__name-text:before {
+  outline: 0;
+  -webkit-box-shadow: 0 0 0 2px rgba(10, 98, 89, 0.7);
+          box-shadow: 0 0 0 2px rgba(10, 98, 89, 0.7);
+}
+
+/* line 83, src/sass/_field-checkbox.scss */
+input:disabled ~ .field-checkbox__name-text:before {
+  border-color: #999999;
+  background: #979797;
+}
+
+/* line 88, src/sass/_field-checkbox.scss */
+.field-checkbox__name-text:after {
+  content: '';
+  position: absolute;
+  top: 49%;
+  -webkit-transform: translateY(-50%) rotate(-45deg);
+          transform: translateY(-50%) rotate(-45deg);
+  left: 0.25rem;
+  width: 0.75rem;
+  height: 0.375rem;
+  opacity: 0;
+  border-left: 2px solid white;
+  border-bottom: 2px solid white;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+}
+
+/* line 101, src/sass/_field-checkbox.scss */
+input:checked ~ .field-checkbox__name-text:after {
+  opacity: 1;
+}
+
+/* line 105, src/sass/_field-checkbox.scss */
+input:checked:disabled ~ .field-checkbox__name-text:after {
+  border-color: #999999;
+}
+
+/* line 113, src/sass/_field-checkbox.scss */
+.field-checkbox__input {
+  position: absolute;
+  top: 0.7em;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  opacity: 0;
+}
+
+/* line 121, src/sass/_field-checkbox.scss */
+.field-checkbox__input:focus, .field-checkbox__input:active {
+  outline: 0;
+  -webkit-box-shadow: 0 0 0 2px rgba(10, 98, 89, 0.7);
+          box-shadow: 0 0 0 2px rgba(10, 98, 89, 0.7);
+}
+
+/* line 1, src/sass/_field-select.scss */
+.field-select {
+  display: block;
+  margin-bottom: 2rem;
+}
+
+/* line 8, src/sass/_field-select.scss */
+.field-select__name {
+  display: block;
+  margin-bottom: 0.4em;
+  line-height: 1.5;
+  font-weight: 700;
+}
+
+/* line 14, src/sass/_field-select.scss */
+.field-select__select {
+  display: inline-block;
+  vertical-align: middle;
+  width: 100%;
+  min-height: 3.125rem;
+  line-height: 1;
+  padding: 1rem 1.125rem;
+  padding-right: 2.1875rem;
+  font-size: 0.875rem;
+  font-family: inherit;
+  border: 1px solid #CFCFCF;
+  border-radius: 3px;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-color: #fff;
+  font-weight: 500;
+  background-image: url("data:image/svg+xml,%3Csvg fill='none' height='9' viewBox='0 0 15 9' width='15' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath clip-rule='evenodd' d='m14.2264.0330617-6.7264 8.6602183-6.726421-8.6602183z' fill='%239f9f9f' fill-rule='evenodd'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-size: 0.9375rem 0.5625rem;
+  background-position: 96% 50%;
+}
+
+/* line 38, src/sass/_field-select.scss */
+.field-select__select:active, .field-select__select:focus {
+  outline: 0;
+  -webkit-box-shadow: 0 0 0 2px rgba(10, 98, 89, 0.7);
+          box-shadow: 0 0 0 2px rgba(10, 98, 89, 0.7);
+}
+
+/* line 43, src/sass/_field-select.scss */
+.field-select__select[disabled], .field-select__select[readonly] {
+  cursor: default;
+  background-color: #FAF5F2;
+}
+
+/* line 50, src/sass/_field-select.scss */
+.field-select--error {
+  color: #FD6F63;
+}
+
+/* line 53, src/sass/_field-select.scss */
+.field-select--error .field-select__name,
+.field-select--error .field-select__select,
+.field-select--error .field-select__help-text {
+  color: #FD6F63;
+}
+
+/* line 59, src/sass/_field-select.scss */
+.field-select--error .field-select__select,
+.field-select--error .choices__inner,
+.field-select--error .choices:after {
+  border-color: #FD6F63;
+  background-color: white;
+}
+
+/* line 1, src/sass/_field-text.scss */
+.field-text {
+  display: block;
+  margin-bottom: 1rem;
+}
+
+/* line 8, src/sass/_field-text.scss */
+.field-text__name {
+  display: block;
+  margin-bottom: 0.4em;
+  line-height: 1.5;
+  font-weight: 700;
+}
+
+/* line 12, src/sass/_field-text.scss */
+.field-text__input-wrap {
+  display: block;
+}
+
+/* line 16, src/sass/_field-text.scss */
+.field-text__input {
+  display: inline-block;
+  vertical-align: middle;
+  width: 100%;
+  min-height: 3.125rem;
+  margin: 0;
+  border: 1px solid #CFCFCF;
+  border-radius: 3px;
+  padding: 0.75rem 1.125rem;
+  line-height: 1;
+  font-size: 0.875rem;
+  font-family: inherit;
+  background-color: #fff;
+  -moz-appearance: textfield;
+  -webkit-appearance: textfield;
+          appearance: textfield;
+  font-weight: 500;
+}
+
+/* line 20, src/sass/mixins/_form-mixins.scss */
+.field-text__input::-webkit-input-placeholder {
+  color: #9F9F9F;
+  font-weight: 500;
+  font-size: 0.875rem;
+}
+.field-text__input::-moz-placeholder {
+  color: #9F9F9F;
+  font-weight: 500;
+  font-size: 0.875rem;
+}
+.field-text__input:-ms-input-placeholder {
+  color: #9F9F9F;
+  font-weight: 500;
+  font-size: 0.875rem;
+}
+.field-text__input::-ms-input-placeholder {
+  color: #9F9F9F;
+  font-weight: 500;
+  font-size: 0.875rem;
+}
+.field-text__input::placeholder {
+  color: #9F9F9F;
+  font-weight: 500;
+  font-size: 0.875rem;
+}
+
+/* line 26, src/sass/mixins/_form-mixins.scss */
+.field-text__input:focus {
+  outline: 0;
+  -webkit-box-shadow: 0 0 0 2px rgba(10, 98, 89, 0.7);
+          box-shadow: 0 0 0 2px rgba(10, 98, 89, 0.7);
+}
+
+/* line 30, src/sass/mixins/_form-mixins.scss */
+.field-text__input[disabled], .field-text__input[readonly] {
+  cursor: not-allowed;
+  background-color: #DFDFDF;
+}
+
+/* line 36, src/sass/mixins/_form-mixins.scss */
+.field-text__input::-webkit-search-cancel-button, .field-text__input::-webkit-search-decoration, .field-text__input::-webkit-inner-spin-button, .field-text__input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+/* line 43, src/sass/mixins/_form-mixins.scss */
+.field-text__input[type='color'] {
+  padding: 0;
+}
+
+/* line 19, src/sass/_field-text.scss */
+textarea.field-text__input {
+  height: auto;
+  min-height: calc(5rem + 2px);
+  resize: vertical;
+}
+
+/* line 28, src/sass/_field-text.scss */
+.field-text__help-text {
+  display: block;
+  padding-top: 0.4em;
+  font-size: 0.75em;
+  line-height: 1.2em;
+  color: gray;
+}
+
+/* line 56, src/sass/mixins/_form-mixins.scss */
+.field-text__help-text:empty {
+  display: none;
+}
+
+/* line 36, src/sass/_field-text.scss */
+.field-text--error .field-text__name,
+.field-text--error .field-text__input,
+.field-text--error .field-text__help-text {
+  color: #E91313;
+}
+
+/* line 42, src/sass/_field-text.scss */
+.field-text--error .field-text__input {
+  border-color: #E91313;
+}
+
+/* line 45, src/sass/_field-text.scss */
+.field-text--error .field-text__input:focus {
+  -webkit-box-shadow: 0 0 0 2px rgba(233, 19, 19, 0.7);
+          box-shadow: 0 0 0 2px rgba(233, 19, 19, 0.7);
+}
+
+/* line 1, src/sass/_modal.scss */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.6);
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+/* line 13, src/sass/_modal.scss */
+.modal__show {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+/* line 17, src/sass/_modal.scss */
+.modal__inner {
+  padding-left: 2.375rem;
+  padding-right: 2.375rem;
+  max-width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+/* line 26, src/sass/_modal.scss */
+.modal__footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 3rem;
+}
+
+/* line 32, src/sass/_modal.scss */
+.modal__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 2rem;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+/* line 44, src/sass/_modal.scss */
+.modal__numbers {
+  font-weight: bold;
+  font-size: 1.25rem;
+  line-height: 1;
+  color: white;
+}
+
+/* line 51, src/sass/_modal.scss */
+.modal__content {
+  margin-top: 2rem;
+}
+
+/* line 55, src/sass/_modal.scss */
+.modal__title {
+  color: white;
+  font-weight: 700;
+  text-align: center;
+  margin-top: 0;
+}
+
+/* line 62, src/sass/_modal.scss */
+.modal__image {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+/* line 66, src/sass/_modal.scss */
+.modal__image img {
+  width: 100%;
+}
+
+/* line 75, src/sass/_modal.scss */
+.modal__tooltip {
+  margin-top: 1rem;
+}
+
+/* line 84, src/sass/_modal.scss */
+.modal .swiper-modal {
+  min-height: auto;
+}
+
+/* line 88, src/sass/_modal.scss */
+.modal .swiper-button-next--modal {
+  position: static;
+}
+
+/* line 92, src/sass/_modal.scss */
+.modal .swiper-button-prev--modal {
+  position: static;
+}
+
+/* line 99, src/sass/_modal.scss */
+.modal--form .modal__inner {
+  margin-left: auto;
+  margin-right: auto;
+  background: #FFFFFF;
+  -webkit-box-shadow: 0px 2px 13px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 2px 13px rgba(0, 0, 0, 0.1);
+  width: 87%;
+  padding-top: 1.375rem;
+  padding-left: 1.375rem;
+  padding-right: 1.375rem;
+  padding-bottom: 3.75rem;
+}
+
+/* line 116, src/sass/_modal.scss */
+.modal--form .modal__header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+/* line 121, src/sass/_modal.scss */
+.modal--form .modal__content {
+  margin-top: clamp(0.375rem, 0.125rem + 0.69444vw, 0.75rem);
+  max-width: 41.25rem;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+/* line 129, src/sass/_modal.scss */
+.modal--form .modal__title {
+  font-size: clamp(1.5625rem, 0.72917rem + 2.31481vw, 2.8125rem);
+  line-height: 1.13;
+  color: #182B33;
+}
+
+/* line 135, src/sass/_modal.scss */
+.modal--form .modal__desc {
+  font-size: clamp(0.9375rem, 0.89583rem + 0.11574vw, 1rem);
+  line-height: 1.5;
+  margin-top: clamp(1.375rem, 1.29167rem + 0.23148vw, 1.5rem);
+  text-align: center;
+}
+
+/* line 142, src/sass/_modal.scss */
+.modal--form form {
+  margin-top: clamp(2rem, 1.66667rem + 0.92593vw, 2.5rem);
+}
+
+/* line 146, src/sass/_modal.scss */
+.modal--form .btn--main {
+  min-width: 14.3125rem;
+}
+
+/* line 153, src/sass/_modal.scss */
+.modal--success .modal__inner {
+  margin-left: auto;
+  margin-right: auto;
+  background: #FFFFFF;
+  -webkit-box-shadow: 0px 2px 13px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 2px 13px rgba(0, 0, 0, 0.1);
+  width: 87%;
+  padding: 1.25rem;
+  position: relative;
+}
+
+/* line 167, src/sass/_modal.scss */
+.modal--success .modal__inner:after {
+  content: '';
+  position: absolute;
+  width: calc(100% - 40px);
+  height: calc(100% - 40px);
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  border: 1px solid #F9C55D;
+}
+
+/* line 184, src/sass/_modal.scss */
+.modal--success .modal__header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+/* line 189, src/sass/_modal.scss */
+.modal--success .close {
+  background-color: white;
+  margin-top: -3px;
+  margin-right: -3px;
+  position: relative;
+}
+
+/* line 195, src/sass/_modal.scss */
+.modal--success .close span {
+  z-index: 2;
+}
+
+/* line 199, src/sass/_modal.scss */
+.modal--success .close:after {
+  content: '';
+  position: absolute;
+  width: calc(100% + 5px);
+  height: calc(100% + 5px);
+  background-color: white;
+  left: -5px;
+  top: 0;
+}
+
+/* line 210, src/sass/_modal.scss */
+.modal--success .modal__content {
+  margin-top: clamp(0.375rem, 0.125rem + 0.69444vw, 0.75rem);
+  max-width: 41.25rem;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-top: clamp(1.5rem, -0.04167rem + 4.28241vw, 3.8125rem);
+  padding-bottom: clamp(2.5rem, 1.45833rem + 2.89352vw, 4.0625rem);
+}
+
+/* line 222, src/sass/_modal.scss */
+.modal--success .modal__title {
+  font-size: clamp(1.5625rem, 0.72917rem + 2.31481vw, 2.8125rem);
+  line-height: 1.13;
+  color: #182B33;
+  margin-top: clamp(1.5rem, 0.83333rem + 1.85185vw, 2.5rem);
+}
+
+/* line 229, src/sass/_modal.scss */
+.modal--success .modal__desc {
+  font-size: clamp(0.9375rem, 0.89583rem + 0.11574vw, 1rem);
+  line-height: 1.5;
+  margin-top: clamp(1rem, 0.83333rem + 0.46296vw, 1.25rem);
+  text-align: center;
+}
+
+/* line 235, src/sass/_modal.scss */
+.modal--success .modal__desc span {
+  color: #609073;
+  font-weight: 700;
+}
+
+/* line 241, src/sass/_modal.scss */
+.modal--success .modal__lead {
+  display: block;
+  text-align: center;
+  font-size: clamp(0.9375rem, 0.89583rem + 0.11574vw, 1rem);
+  font-weight: 700;
+  line-height: 1.5;
+  color: #016297;
+  margin-top: clamp(1.5rem, 0.83333rem + 1.85185vw, 2.5rem);
+}
+
+/* line 251, src/sass/_modal.scss */
+.modal--success .modal__icon {
+  margin: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+/* line 260, src/sass/_modal.scss */
+.modal--success .modal__icon:last-child {
+  margin-top: clamp(1rem, 0.66667rem + 0.92593vw, 1.5rem);
+}
+
+/* line 1, src/sass/_close.scss */
+.close {
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+  width: 1.375rem;
+  height: 1.375rem;
+  border: none;
+  padding: 0;
+  line-height: 1.375rem;
+  background: transparent;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  cursor: pointer;
+}
+
+/* line 14, src/sass/_close.scss */
+.close span {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  height: 1px;
+  vertical-align: middle;
+  font-size: 0;
+  color: transparent;
+  background: transparent;
+}
+
+/* line 24, src/sass/_close.scss */
+.close span:before, .close span:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: #9F9F9F;
+  -webkit-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
+}
+
+/* line 36, src/sass/_close.scss */
+.close span:before {
+  -webkit-transform: rotate3d(0, 0, 1, 45deg);
+          transform: rotate3d(0, 0, 1, 45deg);
+}
+
+/* line 40, src/sass/_close.scss */
+.close span:after {
+  -webkit-transform: rotate3d(0, 0, 1, -45deg);
+          transform: rotate3d(0, 0, 1, -45deg);
+}
+
+/* line 10, src/sass/_form.scss */
+.form__message {
+  opacity: 0;
+  visibility: hidden;
+  font-weight: 500;
+  font-size: 0.875rem;
+  line-height: 1.3;
+  text-align: center;
+  margin-top: 0.75rem;
+}
+
+/* line 19, src/sass/_form.scss */
+.form__message--error {
+  opacity: 1;
+  visibility: visible;
+  color: #E91313;
+}
 @media (min-width: 36rem) {
   /* line 333, src/sass/mixins/_grid-mixins.scss */
   .container {
@@ -1547,6 +2262,47 @@ a.btn--disabled {
   /* line 6, src/sass/_build.scss */
   .build .build__container {
     grid-template-columns: auto auto;
+  }
+  /* line 14, src/sass/_field-select.scss */
+  .field-select__select {
+    background-position: 97% 50%;
+  }
+  /* line 32, src/sass/_modal.scss */
+  .modal__wrapper {
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  /* line 66, src/sass/_modal.scss */
+  .modal__image img {
+    width: 80%;
+  }
+  /* line 75, src/sass/_modal.scss */
+  .modal__tooltip {
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  /* line 99, src/sass/_modal.scss */
+  .modal--form .modal__inner {
+    padding-bottom: 4.5rem;
+    max-width: 59.0625rem;
+  }
+  /* line 153, src/sass/_modal.scss */
+  .modal--success .modal__inner {
+    padding: 1.875rem;
+    max-width: 59.0625rem;
+  }
+  /* line 167, src/sass/_modal.scss */
+  .modal--success .modal__inner:after {
+    width: calc(100% - 60px);
+    height: calc(100% - 60px);
+  }
+  /* line 2, src/sass/_form.scss */
+  .form__row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 1.25rem;
   }
 }
 @media (min-width: 62rem) {

@@ -29,6 +29,68 @@
 }());
 
 
+(function () {
+    var modal = document.getElementById("form-modal");
+    // sucess modal
+    var modalSuccess = document.getElementById("success-modal");
+
+    if(!modal) return;
+
+    var btn = document.querySelectorAll('.btn--modal');
+    var btnSuccess = document.querySelectorAll('.btn--success');
+
+    var close = modal.querySelector('.close');
+    // close success
+    var closeSucess = modalSuccess.querySelector('.close');
+
+
+    function stopScrolling() {
+        document.body.style.overflow = "hidden";
+        document.body.style.height = "100%";
+    }
+
+    function resumeScrolling() {
+        document.body.style.overflow = "auto";
+        document.body.style.height = "auto";
+    }
+
+
+    btn.forEach(item => item.addEventListener('click', (function (e) {
+        e.preventDefault();
+        modal.classList.add('modal__show');
+        stopScrolling();
+    })));
+
+    // to show success modal
+    btnSuccess.forEach(item => item.addEventListener('click', (function (e) {
+        e.preventDefault();
+        modalSuccess.classList.add('modal__show');
+        stopScrolling();
+    })));
+
+    close.addEventListener('click', (function (e) {
+        e.preventDefault();
+        modal.classList.remove('modal__show');
+        resumeScrolling();
+    }));
+
+    // to hide success modal
+    closeSucess.addEventListener('click', (function (e) {
+        e.preventDefault();
+        modalSuccess.classList.remove('modal__show');
+        resumeScrolling();
+    }));
+
+    window.addEventListener('click', (function (e) {
+        if (e.target === modal) {
+            modal.classList.remove('modal__show');
+            resumeScrolling();
+        }
+    }));
+
+
+}());
+
 (function(){
 
     // Добавление/удаление модификаторов при клике на переключение видимости
